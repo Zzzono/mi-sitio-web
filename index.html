@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Bravd Studios — Camisas personalizadas con impresión DTF de alta calidad. Diseños únicos, colores vibrantes, durabilidad superior.">
+  <title>Bravd Studios — Camisas Personalizadas DTF</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition"></div>
+
+  <!-- BACKGROUND WATERMARK LOGO -->
+  <img src="assets/logo1.png" alt="" class="bg-watermark" aria-hidden="true">
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-brand">BRAVD</span>
+      <span class="logo-sub">Studios</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="servicios.html">Servicios &amp; Precios</a></li>
+      <li><a href="#spot">SPOT</a></li>
+      <li>
+        <div class="cart-icon" id="cart-icon" aria-label="Carrito de compras">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke-linejoin="round" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </div>
+      </li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="cart-icon" id="cart-icon-mobile" onclick="openCart()">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke-linejoin="round" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        <span class="cart-badge">0</span>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="particles"></div>
+    <img src="assets/logo1.png" alt="" class="hero-watermark" aria-hidden="true">
+    <div class="hero-content fade-in">
+      <h1>Camisas <span class="highlight" id="typed-text">Personalizadas</span></h1>
+      <p>Impresión DTF de alta calidad que hace que tus diseños cobren vida. Colores vibrantes, durabilidad superior.
+      </p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="servicios.html" class="btn btn-primary">Ver Precios →</a>
+        <a href="nosotros.html" class="btn btn-outline">Conócenos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS COUNTER -->
+  <section class="stats-section" id="stats">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <div class="stat-number" data-target="500" data-suffix="+">0</div>
+        <div class="stat-label">Camisas Entregadas</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number" data-target="100" data-suffix="+">0</div>
+        <div class="stat-label">Clientes Satisfechos</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number" data-target="48" data-suffix="h">0</div>
+        <div class="stat-label">Entrega Express</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number" data-target="100" data-suffix="%">0</div>
+        <div class="stat-label">Garantía de Calidad</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="section-title fade-in">
+      <h2>Nuestro Trabajo</h2>
+      <p>Diseños reales hechos por Bravd Studios</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in"><img src="assets/foto1.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="assets/foto2.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="assets/foto3.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="assets/foto4.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="assets/foto5.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="assets/foto6.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="assets/foto7.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="assets/foto8.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="assets/foto9.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+      <div class="gallery-item fade-in"><img src="assets/foto10.jpg" alt="Diseño Bravd Studios" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- STAR RATINGS -->
+  <section class="ratings-section" id="ratings">
+    <div class="section-title fade-in">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <p>Opiniones reales de quienes confían en Bravd Studios</p>
+    </div>
+    <div class="ratings-grid">
+      <div class="rating-card fade-in">
+        <div class="rating-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="rating-text">"Excelente calidad en la impresión, los colores quedaron tal cual los pedí. Súper
+          recomendado para camisas de equipos."</p>
+        <div class="rating-author">— Cliente verificado</div>
+      </div>
+      <div class="rating-card fade-in">
+        <div class="rating-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="rating-text">"Mandé mi diseño por WhatsApp y en menos de 2 días ya tenía mis camisas listas. La tela
+          es muy buena y la impresión no se despega."</p>
+        <div class="rating-author">— Cliente verificado</div>
+      </div>
+      <div class="rating-card fade-in">
+        <div class="rating-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="rating-text">"Pedí camisas para un evento familiar y todos quedaron encantados. Los precios son justos
+          y el trato es muy profesional."</p>
+        <div class="rating-author">— Cliente verificado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="section-title fade-in">
+      <h2>Nuestros Paquetes</h2>
+      <p>Elige tu plan y agrégalo al carrito</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-img-wrap">
+          <img src="assets/product-individual.png" alt="Camisa Personal" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3>Camisa Personal</h3>
+          <p class="product-desc">Diseño único, impresión DTF full color sobre algodón premium. (1-2 camisas)</p>
+          <div class="product-price">C$ 500 <span>por camisa</span></div>
+          <button class="btn btn-cart" data-add-cart data-id="individual" data-name="Camisa Personal (C$500 c/u)"
+            data-price="500">Agregar 1 Camisa</button>
+        </div>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-img-wrap">
+          <img src="assets/product-pack.png" alt="Pack Equipo" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3>Pack Equipo (3+)</h3>
+          <p class="product-desc">Ideal para grupos y equipos. Diseños variados permitidos. (3-11 camisas)</p>
+          <div class="product-price">C$ 400 <span>por camisa</span></div>
+          <button class="btn btn-cart" data-add-cart data-id="pack-equipo" data-name="Camisa Pack Equipo (C$400 c/u)"
+            data-price="400">Agregar 1 Camisa</button>
+        </div>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-img-wrap">
+          <img src="assets/product-corporate.png" alt="Pack Mayoreo" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3>Pack Mayoreo (12+)</h3>
+          <p class="product-desc">Precio especial para pedidos grandes. Envío incluido. (12+ camisas)</p>
+          <div class="product-price">C$ 350 <span>por camisa</span></div>
+          <button class="btn btn-cart" data-add-cart data-id="pack-mayoreo" data-name="Camisa Pack Mayoreo (C$350 c/u)"
+            data-price="350">Agregar 1 Camisa</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="section-title fade-in">
+      <h2>¿Por qué elegirnos?</h2>
+      <p>Calidad, rapidez y diseño en cada camisa que creamos</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card fade-in">
+        <div class="card-icon">01</div>
+        <h3>Diseños Ilimitados</h3>
+        <p>Imprime cualquier diseño, foto o logo con colores vivos y detalles nítidos gracias a la tecnología DTF.</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">02</div>
+        <h3>Entrega Rápida</h3>
+        <p>Producción express en 24-48 horas. Tu pedido listo cuando lo necesitas.</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">03</div>
+        <h3>Calidad Premium</h3>
+        <p>Telas de primera y tintas que resisten más de 100 lavadas sin perder color ni textura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="section-title fade-in">
+      <h2>Nuestro Proceso</h2>
+      <p>Simple, rápido y con resultados increíbles</p>
+    </div>
+    <div class="process-steps fade-in">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Envía tu Diseño</h3>
+        <p>Mándanos tu imagen, logo o idea por WhatsApp</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Aprobación</h3>
+        <p>Te enviamos una vista previa para tu aprobación</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Impresión DTF</h3>
+        <p>Imprimimos con tecnología de última generación</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>¡Listo!</h3>
+        <p>Recibe tus camisas personalizadas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPOT -->
+  <section id="spot">
+    <div class="section-title fade-in">
+      <div class="spot-badge">Diseños Exclusivos</div>
+      <h2>SPOT — Colección Bravd</h2>
+      <p>Camisas listas para ordenar · Impresión DTF · Tallas S a XXL</p>
+    </div>
+    <!-- Filtros -->
+    <div class="spot-filters fade-in">
+      <button class="spot-filter-btn active" data-filter="all">Todos</button>
+      <button class="spot-filter-btn" data-filter="religiosa">Religiosa</button>
+      <button class="spot-filter-btn" data-filter="musica">Música</button>
+      <button class="spot-filter-btn" data-filter="deportes">Deportes</button>
+      <button class="spot-filter-btn" data-filter="lifestyle">Lifestyle</button>
+      <button class="spot-filter-btn" data-filter="artistas">Artistas</button>
+    </div>
+    <!-- Grid -->
+    <div class="spot-grid" id="spot-grid">
+
+      <!-- 1 San Judas -->
+      <div class="spot-card fade-in" data-category="religiosa">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-san-judas.jpg" alt="San Judas Tadeo" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="san-judas">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">San Judas Tadeo</h3>
+          <p class="spot-card-sub">Siempre a mi lado · Camisa negra</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-san-judas" data-name="Camisa San Judas Tadeo" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 Guns N Roses -->
+      <div class="spot-card fade-in" data-category="musica">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-guns-roses.jpg" alt="Guns N Roses" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="guns-roses">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Guns N' Roses</h3>
+          <p class="spot-card-sub">Appetite for Destruction · Camisa negra</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-guns-roses" data-name="Camisa Guns N' Roses" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Club Hipico -->
+      <div class="spot-card fade-in" data-category="lifestyle">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-club-hipico.jpg" alt="Club Hipico" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="club-hipico">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Club Hípico Cayanl Ipe</h3>
+          <p class="spot-card-sub">Villa Nueva · Polo negro</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-club-hipico" data-name="Polo Club Hípico" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 NCAA -->
+      <div class="spot-card fade-in" data-category="deportes">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-ncaa.jpg" alt="NCAA Midwest Regional" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="ncaa">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">NCAA Regional Champ</h3>
+          <p class="spot-card-sub">Midwest · Full print</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-ncaa" data-name="Camisa NCAA Regional" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 Iconos 28 -->
+      <div class="spot-card fade-in" data-category="lifestyle">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-iconos-28.jpg" alt="Colección Iconos 28" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="iconos-28">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Colección Íconos #28</h3>
+          <p class="spot-card-sub">Diseño ilustrativo · Camisa negra</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-iconos-28" data-name="Camisa Íconos #28" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Anti Social SadBoyz Mariposas -->
+      <div class="spot-card fade-in" data-category="lifestyle">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-antisocial-sadboyz.jpg" alt="Anti Social SadBoyz" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="antisocial-sadboyz">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Anti Social Sad Boyz</h3>
+          <p class="spot-card-sub">Mariposas · Rosa y azul</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-antisocial-sadboyz" data-name="Camisa Anti Social SadBoyz Mariposas" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 Nata Montana Cadena -->
+      <div class="spot-card fade-in" data-category="artistas">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-nata-montana-cadena.jpg" alt="Nata Montana" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="nata-cadena">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Nata Montana</h3>
+          <p class="spot-card-sub">Retrato con cadena dorada</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-nata-cadena" data-name="Camisa Nata Montana Cadena" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 Angel Azul -->
+      <div class="spot-card fade-in" data-category="lifestyle">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-antisocial-angel-azul.jpg" alt="El Angel Azul" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="angel-azul">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Sadboys El Angel Azul</h3>
+          <p class="spot-card-sub">Querubines · Azul y blanco</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-angel-azul" data-name="Camisa Sadboys El Angel Azul" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 Dragon -->
+      <div class="spot-card fade-in" data-category="lifestyle">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-antisocial-dragon.jpg" alt="Anti Social Dragon" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="antisocial-dragon">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Anti Social Social Club</h3>
+          <p class="spot-card-sub">Dragón · Gris y blanco</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-antisocial-dragon" data-name="Camisa Anti Social Social Club Dragón" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 Rosas -->
+      <div class="spot-card fade-in" data-category="lifestyle">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-antisocial-rosas.jpg" alt="Anti Social Rosas" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="antisocial-rosas">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Sad Boyz · Rosas</h3>
+          <p class="spot-card-sub">Me quedó la cicatriz de miles de rosas</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-antisocial-rosas" data-name="Camisa Sad Boyz Rosas" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 Natanael Cano Rojo -->
+      <div class="spot-card fade-in" data-category="artistas">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-natanael-cano-rojo.jpg" alt="Natanael Cano" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="natanael-rojo">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Natanael Cano</h3>
+          <p class="spot-card-sub">Texto rojo · Estilo Scarface</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-natanael-rojo" data-name="Camisa Natanael Cano Rojo" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 Madonna -->
+      <div class="spot-card fade-in" data-category="musica">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-madonna-birkin.jpg" alt="Madonna Flow Rockstar" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="madonna">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Madonna · Flow Rockstar</h3>
+          <p class="spot-card-sub">Birkin rosa · EST. 2024</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-madonna" data-name="Camisa Madonna Flow Rockstar" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13 Natanael Collage -->
+      <div class="spot-card fade-in" data-category="artistas">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-natanael-cano-collage.jpg" alt="Natanael Cano Collage" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="natanael-collage">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Natanael Cano · Collage</h3>
+          <p class="spot-card-sub">Vintage retro · Full print</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-natanael-collage" data-name="Camisa Natanael Cano Collage" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14 Tumbado Tour -->
+      <div class="spot-card fade-in" data-category="artistas">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-natanael-tumbado-tour.jpg" alt="Tumbado Tour" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="tumbado-tour">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Natanael · Tumbado Tour</h3>
+          <p class="spot-card-sub">MMXXIV · Diseño de fuego</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-tumbado-tour" data-name="Camisa Natanael Tumbado Tour" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15 LA Dodgers -->
+      <div class="spot-card fade-in" data-category="artistas">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-natanael-la-dodgers.jpg" alt="Natanael LA Dodgers" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="la-dodgers">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Natanael · LA Dodgers</h3>
+          <p class="spot-card-sub">Gorra azul · Con firma</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-la-dodgers" data-name="Camisa Natanael LA Dodgers" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16 Nata Montana Firma -->
+      <div class="spot-card fade-in" data-category="artistas">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-nata-montana-firma.jpg" alt="Nata Montana Firma" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="nata-firma">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Nata Montana · Firma</h3>
+          <p class="spot-card-sub">Cromado · Foto sonriendo con moto</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-nata-firma" data-name="Camisa Nata Montana Firma" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17 Jordan 23 -->
+      <div class="spot-card fade-in" data-category="deportes">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-jordan-23.jpg" alt="Michael Jordan 23" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="jordan-23">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new spot-badge-drop">New Drop</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Jordan #23 · Bulls</h3>
+          <p class="spot-card-sub">Full print · Con anillos</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-jordan-23" data-name="Camisa Jordan #23 Bulls" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18 LeBron Lakers -->
+      <div class="spot-card fade-in" data-category="deportes">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-lebron-lakers.jpg" alt="LeBron James Lakers" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="lebron">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new spot-badge-drop">New Drop</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">LeBron James · Lakers</h3>
+          <p class="spot-card-sub">Morado y dorado · #23</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-lebron" data-name="Camisa LeBron James Lakers" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19 Yamaha -->
+      <div class="spot-card fade-in" data-category="lifestyle">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-yamaha-motocross.jpg" alt="Yamaha Motocross Life" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="yamaha">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new">Disponible</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Yamaha · Motocross Life</h3>
+          <p class="spot-card-sub">Motul · Dunlop · Red Bull</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-yamaha" data-name="Camisa Yamaha Motocross Life" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20 Jordan 6 Rings -->
+      <div class="spot-card fade-in" data-category="deportes">
+        <div class="spot-card-img-wrap">
+          <img src="assets/spot-jordan-6rings.jpg" alt="Michael Jordan 6 Rings" loading="lazy">
+          <div class="spot-card-overlay">
+            <button class="spot-quick-btn" data-spot-id="jordan-6rings">Ver diseño</button>
+          </div>
+          <div class="spot-badge-new spot-badge-drop">New Drop</div>
+        </div>
+        <div class="spot-card-info">
+          <h3 class="spot-card-name">Michael Jordan · 6 Rings</h3>
+          <p class="spot-card-sub">'91 '92 '93 '96 '97 '98 · Bulls</p>
+          <div class="spot-card-meta"><span>100% Algodón</span><span>S–XXL</span></div>
+          <div class="spot-card-price-row">
+            <span class="spot-price">C$ 500</span>
+            <button class="btn spot-add-btn" data-add-cart data-id="spot-jordan-6rings" data-name="Camisa Jordan 6 Rings" data-price="500">+ Carrito</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /spot-grid -->
+
+    <!-- Modal Quickview -->
+    <div class="spot-modal-overlay" id="spot-modal">
+      <div class="spot-modal">
+        <button class="spot-modal-close" id="spot-modal-close">✕</button>
+        <img src="" alt="" id="spot-modal-img" class="spot-modal-img">
+        <div class="spot-modal-info">
+          <h3 id="spot-modal-name"></h3>
+          <p id="spot-modal-sub"></p>
+          <div class="spot-modal-price">C$ 500</div>
+          <div class="spot-modal-sizes">
+            <span>Talla:</span>
+            <button class="size-btn active">S</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn">L</button>
+            <button class="size-btn">XL</button>
+            <button class="size-btn">XXL</button>
+          </div>
+          <button class="btn btn-primary spot-modal-add" id="spot-modal-add" style="width:100%;justify-content:center;margin-top:16px;">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="fade-in">
+      <h2>¿Listo para crear tus camisas?</h2>
+      <p>Desde una unidad hasta pedidos mayoristas. Contáctanos hoy.</p>
+      <a href="https://wa.me/50576292240?text=Hola%20Bravd%20Studios!%20Me%20interesa%20hacer%20un%20pedido."
+        class="btn btn-primary" target="_blank">WhatsApp →</a>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+      <img src="" alt="Vista ampliada" class="lightbox-img" id="lightbox-img">
+    </div>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Anterior">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Siguiente">›</button>
+    <div class="lightbox-counter" id="lightbox-counter">1 / 10</div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Tu Carrito</h3>
+      <button class="cart-close" id="cart-close" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total:</span><strong id="cart-total">C$ 0</strong></div>
+      <a href="checkout.html" class="btn btn-primary" id="cart-checkout-btn"
+        style="width:100%;justify-content:center;">Proceder al Pago →</a>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/50576292240?text=Hola%20Bravd%20Studios!%20Tengo%20una%20consulta." target="_blank"
+      class="whatsapp-float-btn" aria-label="Contactar por WhatsApp">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+    <div class="whatsapp-tooltip">¿Necesitas ayuda?</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo-text">
+      <span class="f-brand">BRAVD</span>
+      <span class="f-sub">Studios</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+    </ul>
+    <p>© 2026 Bravd Studios — Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
