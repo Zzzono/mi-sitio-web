@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Conoce la visión, misión y valores de Bravd Studios. Somos apasionados por la personalización.">
+  <title>Nosotros — Bravd Studios</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition"></div>
+
+  <img src="assets/logo1.png" alt="" class="bg-watermark" aria-hidden="true">
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-brand">BRAVD</span>
+      <span class="logo-sub">Studios</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html" class="active">Nosotros</a></li>
+      <li><a href="servicios.html">Servicios & Precios</a></li>
+      <li>
+        <div class="cart-icon" id="cart-icon" aria-label="Carrito">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke-linejoin="round" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </div>
+      </li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="cart-icon" id="cart-icon-mobile" onclick="openCart()">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke-linejoin="round" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        <span class="cart-badge">0</span>
+      </div>
+      <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="fade-in">
+      <h1>Sobre Nosotros</h1>
+      <p>Transformamos ideas en camisas que cuentan historias</p>
+    </div>
+  </section>
+
+  <div class="mission-vision">
+    <div class="mv-card fade-in">
+      <h2>Misión</h2>
+      <p>Ofrecer un servicio de personalización de camisas con impresión DTF de la más alta calidad, brindando a
+        nuestros clientes diseños únicos, duraderos y a precios accesibles. Nos comprometemos a superar las expectativas
+        con cada pedido, garantizando atención personalizada, tiempos de entrega rápidos y un producto que refleje la
+        identidad y estilo de cada persona o empresa.</p>
+    </div>
+    <div class="mv-card fade-in">
+      <h2>Visión</h2>
+      <p>Ser la empresa líder en personalización de camisas con tecnología DTF en Nicaragua, reconocida por nuestra
+        innovación, calidad excepcional y compromiso con la satisfacción del cliente. Aspiramos a expandir nuestro
+        alcance a nivel regional, convirtiéndonos en la primera opción para individuos, empresas y organizaciones que
+        buscan expresar su identidad a través de prendas personalizadas.</p>
+    </div>
+  </div>
+
+  <section id="values">
+    <div class="section-title fade-in">
+      <h2>Nuestros Valores</h2>
+      <p>Los principios que guían cada diseño que creamos</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-item fade-in">
+        <div class="icon">—</div>
+        <h3>Calidad</h3>
+        <p>Solo usamos los mejores materiales y tecnología</p>
+      </div>
+      <div class="value-item fade-in">
+        <div class="icon">—</div>
+        <h3>Compromiso</h3>
+        <p>Tu satisfacción es nuestra prioridad número uno</p>
+      </div>
+      <div class="value-item fade-in">
+        <div class="icon">—</div>
+        <h3>Innovación</h3>
+        <p>Siempre a la vanguardia en técnicas de impresión</p>
+      </div>
+      <div class="value-item fade-in">
+        <div class="icon">—</div>
+        <h3>Responsabilidad</h3>
+        <p>Procesos conscientes con el medio ambiente</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="fade-in">
+      <h2>¿Quieres trabajar con nosotros?</h2>
+      <p>Descubre nuestros servicios y precios especiales por volumen</p>
+      <a href="servicios.html" class="btn btn-primary">Ver Servicios →</a>
+    </div>
+  </section>
+
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Tu Carrito</h3><button class="cart-close" id="cart-close" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total:</span><strong id="cart-total">C$ 0</strong></div>
+      <a href="checkout.html" class="btn btn-primary" id="cart-checkout-btn"
+        style="width:100%;justify-content:center;">Proceder al Pago →</a>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/50576292240?text=Hola%20Bravd%20Studios!%20Tengo%20una%20consulta." target="_blank"
+      class="whatsapp-float-btn" aria-label="Contactar por WhatsApp">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+    <div class="whatsapp-tooltip">¿Necesitas ayuda?</div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo-text"><span class="f-brand">BRAVD</span><span class="f-sub">Studios</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+    </ul>
+    <p>© 2026 Bravd Studios — Todos los derechos reservados</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

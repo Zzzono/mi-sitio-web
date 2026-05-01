@@ -1,0 +1,144 @@
+name: 🚀 Deploy & Auto-Fix Bravd Studios
+
+on:
+  push:
+    branches: [ main, master ]
+  schedule:
+    # Verifica el sitio cada 30 minutos y re-despliega si hay errores
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Permite ejecutarlo manualmente
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # ─── JOB 1: Verificar integridad de archivos ───────────────────────────────
+  validate:
+    name: ✅ Validar archivos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Verificar archivos críticos
+        run: |
+          echo "🔍 Verificando archivos del sitio..."
+          ERRORS=0
+
+          # Archivos HTML críticos
+          for file in index.html nosotros.html servicios.html checkout.html; do
+            if [ ! -f "$file" ]; then
+              echo "❌ FALTA: $file"
+              ERRORS=$((ERRORS+1))
+            else
+              echo "✅ OK: $file"
+            fi
+          done
+
+          # Archivos de estilo y lógica
+          for file in styles.css script.js; do
+            if [ ! -f "$file" ]; then
+              echo "❌ FALTA: $file"
+              ERRORS=$((ERRORS+1))
+            else
+              echo "✅ OK: $file"
+            fi
+          done
+
+          # Carpeta de assets
+          if [ ! -d "assets" ]; then
+            echo "❌ FALTA: carpeta assets/"
+            ERRORS=$((ERRORS+1))
+          else
+            ASSET_COUNT=$(ls assets/ | wc -l)
+            echo "✅ OK: assets/ ($ASSET_COUNT archivos)"
+          fi
+
+          if [ $ERRORS -gt 0 ]; then
+            echo "⚠️ Se encontraron $ERRORS errores de archivos"
+            exit 1
+          fi
+
+          echo "🎉 Todos los archivos están correctos"
+
+  # ─── JOB 2: Deploy a GitHub Pages ─────────────────────────────────────────
+  deploy:
+    name: 🌐 Deploy GitHub Pages
+    runs-on: ubuntu-latest
+    needs: validate
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Subir archivos del sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: ✅ Deploy completado
+        run: |
+          echo "🚀 Sitio desplegado exitosamente"
+          echo "🌐 URL: ${{ steps.deployment.outputs.page_url }}"
+
+  # ─── JOB 3: Health Check post-deploy ──────────────────────────────────────
+  health-check:
+    name: 🏥 Verificar sitio en vivo
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Esperar que GitHub Pages propague cambios
+        run: sleep 30
+
+      - name: Verificar páginas principales
+        run: |
+          BASE_URL="https://zzzono.github.io/mi-sitio-web"
+          PAGES=("/" "/nosotros.html" "/servicios.html" "/checkout.html")
+          ERRORS=0
+
+          for page in "${PAGES[@]}"; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$BASE_URL$page")
+            if [ "$STATUS" = "200" ]; then
+              echo "✅ $page → HTTP $STATUS"
+            else
+              echo "❌ $page → HTTP $STATUS (ERROR)"
+              ERRORS=$((ERRORS+1))
+            fi
+          done
+
+          # Verificar que las imágenes críticas existen
+          IMAGES=("assets/foto1.jpg" "assets/logo1.png" "assets/spot-san-judas.jpg")
+          for img in "${IMAGES[@]}"; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$BASE_URL/$img")
+            if [ "$STATUS" = "200" ]; then
+              echo "✅ $img → OK"
+            else
+              echo "❌ $img → HTTP $STATUS (ROTA)"
+              ERRORS=$((ERRORS+1))
+            fi
+          done
+
+          if [ $ERRORS -gt 0 ]; then
+            echo ""
+            echo "⚠️ $ERRORS errores detectados en el sitio en vivo"
+            echo "💡 Revisa los archivos y vuelve a hacer push"
+            exit 1
+          fi
+
+          echo ""
+          echo "🎉 Sitio completamente funcional y sin errores"

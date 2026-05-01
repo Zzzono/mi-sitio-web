@@ -1,0 +1,412 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="UTF-8">
+<title>Documentacion Bravd Studios</title>
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml>
+<![endif]-->
+<style>
+  body { font-family: Calibri, sans-serif; font-size: 11pt; margin: 2cm; color: #000; }
+  h1 { font-size: 24pt; color: #1a1a1a; border-bottom: 3px solid #000; padding-bottom: 6pt; }
+  h2 { font-size: 16pt; color: #1a1a1a; margin-top: 20pt; border-left: 4px solid #333; padding-left: 8pt; }
+  h3 { font-size: 13pt; color: #333; margin-top: 14pt; }
+  h4 { font-size: 11pt; color: #555; margin-top: 10pt; }
+  p { line-height: 1.5; margin: 6pt 0; }
+  table { border-collapse: collapse; width: 100%; margin: 10pt 0; }
+  th { background-color: #1a1a1a; color: #fff; padding: 6pt 10pt; text-align: left; font-size: 10pt; }
+  td { padding: 5pt 10pt; border: 1px solid #ccc; font-size: 10pt; }
+  tr:nth-child(even) td { background-color: #f5f5f5; }
+  code { font-family: Consolas, monospace; background: #f0f0f0; padding: 2pt 5pt; font-size: 10pt; }
+  pre { background: #1a1a1a; color: #fff; padding: 10pt; font-family: Consolas, monospace; font-size: 9pt; }
+  .info-box { background: #f0f0f0; border-left: 4px solid #333; padding: 8pt 12pt; margin: 10pt 0; }
+  .badge { display: inline-block; background: #1a1a1a; color: #fff; padding: 2pt 8pt; font-size: 9pt; border-radius: 3pt; }
+  hr { border: none; border-top: 1px solid #ccc; margin: 16pt 0; }
+  ul li, ol li { margin: 4pt 0; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<h1>Documentación del Sitio Web — Bravd Studios</h1>
+
+<table>
+  <tr><td><b>Versión</b></td><td>2.0</td></tr>
+  <tr><td><b>Fecha</b></td><td>Abril 2026</td></tr>
+  <tr><td><b>Tecnologías</b></td><td>HTML, CSS, JavaScript (Vanilla)</td></tr>
+  <tr><td><b>Repositorio GitHub</b></td><td>https://github.com/Zzzono/mi-sitio-web</td></tr>
+  <tr><td><b>Sitio en vivo</b></td><td>https://zzzono.github.io/mi-sitio-web/index.html</td></tr>
+</table>
+
+<hr>
+
+<h2>1. ¿Qué es este proyecto?</h2>
+
+<p><b>Bravd Studios</b> es un sitio web de comercio electrónico (tienda en línea) para una empresa de impresión de camisas con tecnología DTF (Direct to Film). El sitio permite a los clientes:</p>
+<ul>
+  <li>Ver los diseños de camisas disponibles</li>
+  <li>Seleccionar productos y agregarlos a un carrito de compras</li>
+  <li>Completar su pedido enviando los detalles directamente por WhatsApp</li>
+</ul>
+
+<div class="info-box">
+  <b>En términos simples:</b> Es la vitrina digital de Bravd Studios, donde la gente puede ver, escoger y ordenar sus camisas personalizadas desde su celular o computadora, sin necesidad de llamar ni visitar físicamente el negocio.
+</div>
+
+<hr>
+
+<h2>2. Estructura de Archivos del Proyecto</h2>
+
+<pre>
+dtf-camisas-web/
+│
+├── index.html              → Página principal (inicio)
+├── nosotros.html           → Página "Acerca de nosotros"
+├── servicios.html          → Página de servicios y precios
+├── checkout.html           → Página de finalización de compra
+├── styles.css              → Todos los estilos visuales del sitio
+├── script.js               → Toda la lógica e interactividad
+├── documentacion.md        → Documentación en formato Markdown
+│
+└── assets/                 → Carpeta de imágenes
+    ├── logo1.png
+    ├── foto1.jpg ... foto10.jpg
+    ├── product-individual.png
+    ├── product-corporate.png
+    ├── product-pack.png
+    └── spot-[nombre].jpg   (20 imágenes de mockups SPOT)
+</pre>
+
+<hr>
+
+<h2>3. Tecnologías Utilizadas</h2>
+
+<table>
+  <tr><th>Tecnología</th><th>¿Qué es?</th><th>¿Para qué se usa?</th></tr>
+  <tr><td><b>HTML</b></td><td>El esqueleto de la página</td><td>Define la estructura: menú, secciones, botones, textos</td></tr>
+  <tr><td><b>CSS</b></td><td>El diseño visual</td><td>Colores, tipografías, animaciones, diseño responsivo</td></tr>
+  <tr><td><b>JavaScript</b></td><td>La lógica e interactividad</td><td>Carrito de compras, filtros, modales, cálculo de precios</td></tr>
+  <tr><td><b>Git + GitHub</b></td><td>Control de versiones</td><td>Guarda historial de cambios y aloja el código en la nube</td></tr>
+  <tr><td><b>GitHub Pages</b></td><td>Hosting gratuito</td><td>Publica el sitio en internet automáticamente</td></tr>
+  <tr><td><b>Google Fonts (Outfit)</b></td><td>Tipografía externa</td><td>La fuente de letras moderna usada en todo el sitio</td></tr>
+</table>
+
+<hr>
+
+<h2>4. Páginas del Sitio</h2>
+
+<h3>4.1 Página Principal (index.html)</h3>
+<p>Es la página de entrada. Contiene todas las secciones principales:</p>
+
+<h4>a) Barra de Navegación (Navbar)</h4>
+<ul>
+  <li>Logo de Bravd Studios en la esquina superior izquierda</li>
+  <li>Links: <b>Inicio</b>, <b>Nosotros</b>, <b>Servicios &amp; Precios</b>, <b>SPOT</b></li>
+  <li>Ícono del carrito de compras con contador de artículos</li>
+  <li>En móviles: menú hamburguesa (las tres rayitas)</li>
+</ul>
+
+<h4>b) Hero (Pantalla de Bienvenida)</h4>
+<ul>
+  <li>Título principal animado: "Camisas Originales"</li>
+  <li>Subtítulo descriptivo del servicio</li>
+  <li>Botones: "Ver Precios" y "Conócenos"</li>
+  <li>Fondo con el logo de Bravd como marca de agua decorativa</li>
+</ul>
+
+<h4>c) Nuestros Paquetes (Productos)</h4>
+<table>
+  <tr><th>Paquete</th><th>Precio unitario</th><th>Cantidad</th></tr>
+  <tr><td>Camisa Personal</td><td>C$ 500</td><td>1–2 camisas</td></tr>
+  <tr><td>Pack Equipo</td><td>C$ 400</td><td>3–11 camisas</td></tr>
+  <tr><td>Pack Mayoreo</td><td>C$ 350</td><td>12 o más camisas</td></tr>
+</table>
+
+<h4>d) Galería de Trabajos</h4>
+<ul>
+  <li>10 fotografías de trabajos reales</li>
+  <li>Al hacer clic en una imagen se abre en tamaño completo (lightbox)</li>
+  <li>Navegación con flechas entre imágenes</li>
+</ul>
+
+<h4>e) Sección SPOT — Colección Bravd</h4>
+<p>(Ver detalle en sección 5)</p>
+
+<h4>f) Llamado a la Acción (CTA)</h4>
+<ul>
+  <li>Texto motivador para impulsar al cliente a ordenar</li>
+  <li>Botón directo a WhatsApp</li>
+</ul>
+
+<h4>g) Testimonios</h4>
+<ul>
+  <li>Comentarios de clientes satisfechos con calificación de estrellas</li>
+</ul>
+
+<h4>h) Preguntas Frecuentes (FAQ)</h4>
+<ul>
+  <li>Acordeón interactivo con las preguntas más comunes</li>
+  <li>Al hacer clic en una pregunta se despliega la respuesta</li>
+</ul>
+
+<h3>4.2 Página de Servicios (servicios.html)</h3>
+<p>Explica en detalle el proceso de impresión DTF y las opciones disponibles. Incluye una calculadora de precio interactiva donde el cliente puede estimar el costo de su pedido.</p>
+
+<h3>4.3 Página Nosotros (nosotros.html)</h3>
+<p>Presenta la historia, misión y equipo de Bravd Studios.</p>
+
+<h3>4.4 Página de Checkout (checkout.html)</h3>
+<ul>
+  <li>Resumen del pedido con precios efectivos por tier</li>
+  <li>Indicador del nivel de precio activo</li>
+  <li>Formulario: nombre, teléfono, dirección de entrega y notas</li>
+  <li>Botón "Ordenar por WhatsApp" que genera el mensaje automáticamente</li>
+</ul>
+
+<hr>
+
+<h2>5. Sección SPOT — Colección Bravd</h2>
+
+<p>Galería de mockups (diseños preestablecidos listos para ordenar). Contiene <b>20 diseños exclusivos</b> de camisas impresas con DTF.</p>
+
+<h3>5.1 Filtros por Categoría</h3>
+<table>
+  <tr><th>Filtro</th><th>Diseños incluidos</th></tr>
+  <tr><td>Todos</td><td>Muestra los 20 diseños</td></tr>
+  <tr><td>Religiosa</td><td>San Judas Tadeo</td></tr>
+  <tr><td>Música</td><td>Guns N' Roses, Madonna</td></tr>
+  <tr><td>Deportes</td><td>Jordan #23, LeBron Lakers, Jordan 6 Rings, NCAA</td></tr>
+  <tr><td>Lifestyle</td><td>Yamaha, Anti Social Club, Club Hípico, Íconos #28, Sadboys</td></tr>
+  <tr><td>Artistas</td><td>Natanael Cano (x4), Nata Montana (x2)</td></tr>
+</table>
+
+<h3>5.2 Tarjetas de Producto</h3>
+<p>Cada diseño tiene:</p>
+<ul>
+  <li>Foto del mockup (camisa con el diseño puesto)</li>
+  <li>Badge: "DISPONIBLE" o "NEW DROP" (rojo pulsante para lanzamientos)</li>
+  <li>Nombre y descripción del diseño</li>
+  <li>Información: material (100% Algodón) y tallas (S–XXL)</li>
+  <li>Precio: <b>C$ 500</b></li>
+  <li>Botón "+ Carrito" para agregar directamente</li>
+  <li>Al pasar el mouse: botón "Ver diseño" que abre el modal</li>
+</ul>
+
+<h3>5.3 Quick View Modal (Vista Rápida)</h3>
+<p>Al hacer clic en "Ver diseño" se abre una ventana emergente con:</p>
+<ul>
+  <li>Imagen del diseño en tamaño grande</li>
+  <li>Nombre, descripción y precio</li>
+  <li>Selector de talla: S / M / L / XL / XXL</li>
+  <li>Botón "Agregar al Carrito" (incluye la talla seleccionada)</li>
+</ul>
+
+<h3>5.4 Lista Completa de Diseños</h3>
+<table>
+  <tr><th>#</th><th>Nombre del Diseño</th><th>Categoría</th><th>Badge</th></tr>
+  <tr><td>1</td><td>San Judas Tadeo</td><td>Religiosa</td><td>Disponible</td></tr>
+  <tr><td>2</td><td>Guns N' Roses</td><td>Música</td><td>Disponible</td></tr>
+  <tr><td>3</td><td>Club Hípico Cayanl Ipe</td><td>Lifestyle</td><td>Disponible</td></tr>
+  <tr><td>4</td><td>NCAA Regional Champ</td><td>Deportes</td><td>Disponible</td></tr>
+  <tr><td>5</td><td>Colección Íconos #28</td><td>Lifestyle</td><td>Disponible</td></tr>
+  <tr><td>6</td><td>Anti Social Sad Boyz (Mariposas)</td><td>Lifestyle</td><td>Disponible</td></tr>
+  <tr><td>7</td><td>Nata Montana — Cadena</td><td>Artistas</td><td>Disponible</td></tr>
+  <tr><td>8</td><td>Sadboys El Angel Azul</td><td>Lifestyle</td><td>Disponible</td></tr>
+  <tr><td>9</td><td>Anti Social Social Club — Dragón</td><td>Lifestyle</td><td>Disponible</td></tr>
+  <tr><td>10</td><td>Sad Boyz Rosas</td><td>Lifestyle</td><td>Disponible</td></tr>
+  <tr><td>11</td><td>Natanael Cano — Rojo</td><td>Artistas</td><td>Disponible</td></tr>
+  <tr><td>12</td><td>Madonna Flow Rockstar</td><td>Música</td><td>Disponible</td></tr>
+  <tr><td>13</td><td>Natanael Cano — Collage</td><td>Artistas</td><td>Disponible</td></tr>
+  <tr><td>14</td><td>Natanael — Tumbado Tour</td><td>Artistas</td><td>Disponible</td></tr>
+  <tr><td>15</td><td>Natanael — LA Dodgers</td><td>Artistas</td><td>Disponible</td></tr>
+  <tr><td>16</td><td>Nata Montana — Firma</td><td>Artistas</td><td>Disponible</td></tr>
+  <tr><td>17</td><td>Jordan #23 Bulls</td><td>Deportes</td><td>New Drop</td></tr>
+  <tr><td>18</td><td>LeBron James Lakers</td><td>Deportes</td><td>New Drop</td></tr>
+  <tr><td>19</td><td>Yamaha Motocross Life</td><td>Lifestyle</td><td>Disponible</td></tr>
+  <tr><td>20</td><td>Michael Jordan 6 Rings</td><td>Deportes</td><td>New Drop</td></tr>
+</table>
+
+<hr>
+
+<h2>6. Sistema de Carrito de Compras</h2>
+
+<p>El carrito funciona completamente en el navegador del cliente, sin necesidad de servidor ni base de datos.</p>
+
+<h3>6.1 ¿Cómo funciona?</h3>
+<ol>
+  <li>El cliente hace clic en "Agregar al Carrito"</li>
+  <li>El ítem se guarda en la memoria del navegador (localStorage)</li>
+  <li>El ícono del carrito muestra el número de artículos con animación</li>
+  <li>Se puede abrir el carrito desde cualquier página</li>
+  <li>Dentro del carrito: aumentar, disminuir o eliminar ítems</li>
+  <li>El total se recalcula automáticamente con el precio correcto</li>
+</ol>
+
+<h3>6.2 Sistema de Precios Dinámicos por Volumen</h3>
+<p>El precio por camisa baja automáticamente según la cantidad total en el carrito:</p>
+
+<table>
+  <tr><th>Cantidad total en carrito</th><th>Precio por camisa</th><th>Ahorro vs precio base</th></tr>
+  <tr><td>1 – 2 camisas</td><td><b>C$ 500</b></td><td>—</td></tr>
+  <tr><td>3 – 11 camisas</td><td><b>C$ 400</b></td><td>C$ 100 por camisa</td></tr>
+  <tr><td>12 o más camisas</td><td><b>C$ 350</b></td><td>C$ 150 por camisa</td></tr>
+</table>
+
+<div class="info-box">
+  <b>Regla de oro:</b> El sistema siempre aplica el precio MÁS CONVENIENTE para el cliente. Si un ítem ya tiene precio de C$350 (Pack Mayoreo), ese precio no sube aunque el total sea menor a 12 unidades.
+</div>
+
+<h3>6.3 Indicadores en el Carrito</h3>
+<ul>
+  <li>Con menos de 3 camisas: avisa cuántas más se necesitan para bajar a C$400</li>
+  <li>Con 3–11 camisas: muestra "Pack Equipo" activo y cuántas faltan para C$350</li>
+  <li>Con 12 o más: muestra "Pack Mayoreo" activo — mejor precio</li>
+</ul>
+
+<h3>6.4 Flujo de Pago por WhatsApp</h3>
+<ol>
+  <li>Cliente agrega productos al carrito</li>
+  <li>Va al checkout y llena sus datos (nombre, teléfono, dirección)</li>
+  <li>Hace clic en "Ordenar por WhatsApp"</li>
+  <li>Se abre WhatsApp con un mensaje pre-escrito que incluye: lista de productos, precios, total y datos del cliente</li>
+  <li>El cliente solo envía el mensaje y el equipo de Bravd confirma el pedido</li>
+</ol>
+
+<hr>
+
+<h2>7. Diseño Visual</h2>
+
+<h3>7.1 Paleta de Colores</h3>
+<table>
+  <tr><th>Color</th><th>Uso principal</th></tr>
+  <tr><td>Negro (#000000)</td><td>Fondo principal</td></tr>
+  <tr><td>Blanco (#ffffff)</td><td>Texto principal, botones de acción</td></tr>
+  <tr><td>Gris (#999999)</td><td>Texto secundario y descripciones</td></tr>
+  <tr><td>Rojo (#ff0040)</td><td>Badge "New Drop" con animación pulsante</td></tr>
+  <tr><td>Verde (#25d366)</td><td>Botón de WhatsApp flotante</td></tr>
+</table>
+
+<h3>7.2 Estilo: Glassmorphism</h3>
+<p>El sitio usa un estilo moderno llamado <i>glassmorphism</i> (efecto vidrio): elementos con fondos semitransparentes, bordes sutiles y desenfoque de fondo. Esto da una apariencia premium y contemporánea.</p>
+
+<h3>7.3 Tipografía</h3>
+<ul>
+  <li><b>Outfit</b> (Google Fonts): fuente sans-serif moderna, usada en todo el sitio</li>
+  <li>Pesos: 400 (regular), 600 (semibold), 700 (bold), 900 (black)</li>
+</ul>
+
+<h3>7.4 Animaciones</h3>
+<ul>
+  <li><b>Fade-in al hacer scroll:</b> los elementos aparecen suavemente al llegar a ellos</li>
+  <li><b>Hover en tarjetas:</b> elevación con sombra al pasar el mouse</li>
+  <li><b>Zoom en imágenes:</b> ligero zoom al hacer hover sobre la imagen</li>
+  <li><b>Pulso en badges "New Drop":</b> resplandor rojo pulsante</li>
+  <li><b>Transición de página:</b> efecto de entrada suave al navegar</li>
+  <li><b>Barra de progreso de scroll:</b> línea superior que indica cuánto se ha desplazado la página</li>
+</ul>
+
+<h3>7.5 Diseño Responsivo</h3>
+<table>
+  <tr><th>Dispositivo</th><th>Ancho</th><th>Columnas del grid</th></tr>
+  <tr><td>Desktop</td><td>+1024px</td><td>3–4 columnas</td></tr>
+  <tr><td>Tablet</td><td>768px–1024px</td><td>2 columnas</td></tr>
+  <tr><td>Móvil</td><td>-768px</td><td>1–2 columnas, menú hamburguesa</td></tr>
+</table>
+
+<hr>
+
+<h2>8. Control de Versiones y Publicación</h2>
+
+<h3>8.1 Repositorio GitHub</h3>
+<table>
+  <tr><td><b>URL del repositorio</b></td><td>https://github.com/Zzzono/mi-sitio-web</td></tr>
+  <tr><td><b>Rama principal</b></td><td>main</td></tr>
+  <tr><td><b>Hosting</b></td><td>GitHub Pages (gratuito)</td></tr>
+  <tr><td><b>Sitio en vivo</b></td><td>https://zzzono.github.io/mi-sitio-web/index.html</td></tr>
+</table>
+
+<h3>8.2 Flujo para Actualizar el Sitio</h3>
+<p>Después de hacer cambios en los archivos, abrir la terminal de VS Code en la carpeta del proyecto y ejecutar:</p>
+<pre>
+git add -A
+git commit -m "Descripcion del cambio"
+git push origin master:main --force
+</pre>
+<p>En 1–2 minutos el sitio en vivo se actualiza automáticamente.</p>
+
+<hr>
+
+<h2>9. Guía de Mantenimiento</h2>
+
+<h3>9.1 Agregar un nuevo diseño a la sección SPOT</h3>
+<ol>
+  <li>Guardar la imagen en <code>assets/</code> con el formato: <code>spot-nombre-diseño.jpg</code></li>
+  <li>En <code>index.html</code>, dentro de <code>&lt;div class="spot-grid"&gt;</code>, copiar un bloque <code>&lt;div class="spot-card"&gt;</code> existente</li>
+  <li>Modificar: categoría, ruta de imagen, nombre, descripción y datos del botón</li>
+  <li>Actualizar en GitHub con los comandos de la sección 8.2</li>
+</ol>
+
+<h3>9.2 Cambiar los precios por tier</h3>
+<p>En <code>script.js</code>, función <code>getEffectiveItemPrice</code>:</p>
+<pre>
+const tier = count >= 12 ? 350 : count >= 3 ? 400 : 500;
+</pre>
+<p>Cambiar los números 350, 400, 500 por los precios nuevos, y 12 y 3 por las cantidades deseadas.</p>
+
+<h3>9.3 Cambiar el número de WhatsApp</h3>
+<p>En <code>script.js</code> buscar <code>50576292240</code> y reemplazar por el nuevo número (con código de país, sin + ni espacios).</p>
+
+<h3>9.4 Agregar nuevas fotos a la galería</h3>
+<ol>
+  <li>Guardar la imagen en <code>assets/</code> como <code>foto11.jpg</code>, <code>foto12.jpg</code>, etc.</li>
+  <li>En <code>index.html</code>, dentro de la sección de galería, agregar una nueva tarjeta con la ruta de la imagen</li>
+</ol>
+
+<hr>
+
+<h2>10. Compatibilidad con Navegadores</h2>
+
+<table>
+  <tr><th>Navegador</th><th>Soporte</th></tr>
+  <tr><td>Google Chrome</td><td>Completo</td></tr>
+  <tr><td>Mozilla Firefox</td><td>Completo</td></tr>
+  <tr><td>Safari (Mac / iPhone)</td><td>Completo</td></tr>
+  <tr><td>Microsoft Edge</td><td>Completo</td></tr>
+  <tr><td>Internet Explorer</td><td>No soportado</td></tr>
+</table>
+
+<p>Compatible con dispositivos móviles iOS y Android.</p>
+
+<hr>
+
+<h2>11. Glosario de Términos</h2>
+
+<table>
+  <tr><th>Término técnico</th><th>Significado sencillo</th></tr>
+  <tr><td>HTML</td><td>El esqueleto de la página — define qué elementos existen</td></tr>
+  <tr><td>CSS</td><td>El maquillaje de la página — define cómo se ven los elementos</td></tr>
+  <tr><td>JavaScript</td><td>El cerebro de la página — hace que las cosas funcionen</td></tr>
+  <tr><td>GitHub</td><td>Carpeta en internet que guarda todas las versiones del código</td></tr>
+  <tr><td>GitHub Pages</td><td>Servicio gratuito que publica el sitio en internet</td></tr>
+  <tr><td>Commit</td><td>Guardar un punto de control en el historial (como un "save")</td></tr>
+  <tr><td>Push</td><td>Enviar los cambios guardados hacia GitHub (subir a la nube)</td></tr>
+  <tr><td>Responsive</td><td>Que la página se adapta a cualquier tamaño de pantalla</td></tr>
+  <tr><td>localStorage</td><td>Memoria del navegador donde se guarda el carrito</td></tr>
+  <tr><td>Modal</td><td>Ventana emergente que aparece encima del contenido principal</td></tr>
+  <tr><td>DTF</td><td>Direct to Film: tecnología de impresión de alta calidad para camisas</td></tr>
+  <tr><td>Mockup</td><td>Fotografía de cómo se vería el diseño puesto en la camisa real</td></tr>
+  <tr><td>Tier</td><td>Nivel de precio según la cantidad (ej: tier 1=500, tier 2=400, tier 3=350)</td></tr>
+  <tr><td>Glassmorphism</td><td>Estilo de diseño que simula vidrio esmerilado con transparencia</td></tr>
+  <tr><td>Lightbox</td><td>Al hacer clic en una imagen, se abre en pantalla completa con fondo oscuro</td></tr>
+  <tr><td>FAQ</td><td>Frequently Asked Questions = Preguntas Frecuentes</td></tr>
+  <tr><td>CTA</td><td>Call to Action = Llamado a la Acción (botones como "Ordena Ahora")</td></tr>
+  <tr><td>Navbar</td><td>La barra de navegación en la parte superior de la página</td></tr>
+  <tr><td>Footer</td><td>El pie de página en la parte inferior</td></tr>
+  <tr><td>Hero</td><td>La sección grande de bienvenida al inicio de la página</td></tr>
+</table>
+
+<hr>
+<p style="text-align:center; color:#999; font-size:9pt;">
+  Documentación técnica — Bravd Studios &copy; 2026 &nbsp;|&nbsp; Desarrollado con HTML, CSS &amp; JavaScript
+</p>
+
+</body>
+</html>
