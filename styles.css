@@ -79,6 +79,17 @@ body {
   margin-bottom: 2px;
 }
 
+.logo-img {
+  height: 48px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: opacity .3s ease;
+}
+
+.logo-img:hover {
+  opacity: .8;
+}
+
 /* ── BACKGROUND WATERMARK LOGO ── */
 .bg-watermark {
   position: fixed;

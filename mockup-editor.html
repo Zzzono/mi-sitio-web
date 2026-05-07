@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup Editor — Bravd Studios</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mockup-editor.css">
+</head>
+<body>
+  <img src="assets/logo1.png" alt="" class="bg-watermark" aria-hidden="true">
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="logo"><img src="assets/logo-nav.png" alt="Bravd Studios" class="logo-img"></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="mockup-editor.html" class="active">Mockup Editor</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div>
+      <h1>Mockup <span class="highlight">Editor</span></h1>
+      <p>Visualiza tu diseno en una camisa antes de imprimir. Arrastra, ajusta y descarga.</p>
+    </div>
+  </section>
+
+  <section class="me-section">
+    <!-- CONTROLS -->
+    <div class="me-controls">
+
+      <!-- 1: Select mockup -->
+      <div class="me-panel">
+        <div class="me-panel-header"><span class="me-step-badge">1</span><h3>Elige tu Mockup</h3></div>
+        <div class="me-panel-body">
+          <div class="me-mockup-grid" id="mockup-grid">
+            <button class="me-mockup-thumb active" data-mockup="negro-espalda">
+              <img src="assets/mockup-negro-espalda.jpg.jpg" alt="Negro Espalda">
+              <span>Negro Espalda</span>
+            </button>
+            <button class="me-mockup-thumb" data-mockup="negro-frente">
+              <img src="assets/mockup-negro-frente.jpg.jpg" alt="Negro Frente">
+              <span>Negro Frente</span>
+            </button>
+            <button class="me-mockup-thumb" data-mockup="blanco-frente">
+              <img src="assets/mockup-blanco-frente.jpg.jpg" alt="Blanco Frente">
+              <span>Blanco Frente</span>
+            </button>
+            <button class="me-mockup-thumb" data-mockup="blanco-espalda">
+              <img src="assets/mockup-blanco-espalda.jpg.jpg" alt="Blanco Espalda">
+              <span>Blanco Espalda</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: Upload design -->
+      <div class="me-panel">
+        <div class="me-panel-header"><span class="me-step-badge">2</span><h3>Sube tu Diseno</h3></div>
+        <div class="me-panel-body">
+          <label class="me-upload-design" id="lbl-design">
+            <input type="file" accept="image/*" id="input-design" hidden>
+            <div class="me-upload-inner" id="upload-inner">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              <span>Sube tu imagen aqui</span>
+              <small>JPG, PNG o WEBP</small>
+            </div>
+          </label>
+          <div class="me-design-loaded" id="design-loaded" style="display:none;">
+            <span id="design-filename">archivo.png</span>
+            <div style="display:flex;gap:6px;">
+              <button class="me-btn-bg" id="btn-remove-bg">Quitar fondo</button>
+              <button class="me-btn-x" id="btn-remove">x</button>
+            </div>
+          </div>
+          <div class="me-loading" id="bg-loading" style="display:none;">
+            <div class="me-spinner"></div><span>Quitando fondo...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Adjust -->
+      <div class="me-panel">
+        <div class="me-panel-header"><span class="me-step-badge">3</span><h3>Ajustar Diseno</h3></div>
+        <div class="me-panel-body">
+          <div class="me-slider-row">
+            <label>Tamano</label>
+            <input type="range" id="sl-size" min="5" max="90" value="35" class="me-slider">
+            <span id="val-size">35%</span>
+          </div>
+          <div class="me-slider-row">
+            <label>Opacidad</label>
+            <input type="range" id="sl-opacity" min="10" max="100" value="100" class="me-slider">
+            <span id="val-opacity">100%</span>
+          </div>
+          <div class="me-slider-row">
+            <label>Rotacion</label>
+            <input type="range" id="sl-rotate" min="-180" max="180" value="0" class="me-slider">
+            <span id="val-rotate">0</span>
+          </div>
+          <div class="me-btn-row">
+            <button class="me-sm-btn" id="btn-center">Centrar</button>
+            <button class="me-sm-btn" id="btn-flip">Voltear</button>
+            <button class="me-sm-btn" id="btn-reset-pos">Reset</button>
+          </div>
+          <p class="me-hint">Arrastra para mover. En celular usa dos dedos para agrandar o achicar.</p>
+        </div>
+      </div>
+
+      <!-- 4: Actions -->
+      <button class="me-action-btn me-download-btn" id="btn-download">Descargar PNG</button>
+      <button class="me-action-btn me-wa-btn" id="btn-whatsapp">Enviar por WhatsApp</button>
+    </div>
+
+    <!-- PREVIEW -->
+    <div class="me-preview" id="me-preview">
+      <div class="me-preview-frame" id="preview-frame">
+        <img class="me-mockup-img" id="mockup-display" src="assets/mockup-negro-espalda.jpg.jpg" alt="Mockup">
+        <div class="me-design-el" id="design-el" style="display:none;">
+          <img id="design-display" src="" alt="Diseno" draggable="false">
+          <div class="me-handle me-h-tl" data-dir="tl"></div>
+          <div class="me-handle me-h-tr" data-dir="tr"></div>
+          <div class="me-handle me-h-bl" data-dir="bl"></div>
+          <div class="me-handle me-h-br" data-dir="br"></div>
+        </div>
+        <div class="me-mobile-hint" id="mobile-hint">Arrastra para mover · Pellizca para escalar</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section style="padding:60px 40px 100px;">
+    <div class="section-title"><h2>Como funciona</h2></div>
+    <div class="me-how-grid">
+      <div class="me-how-card"><div class="me-how-num">1</div><h4>Elige Mockup</h4><p>Selecciona color y vista</p></div>
+      <div class="me-how-card"><div class="me-how-num">2</div><h4>Sube Diseno</h4><p>JPG o PNG</p></div>
+      <div class="me-how-card"><div class="me-how-num">3</div><h4>Ajusta</h4><p>Mueve, escala, rota</p></div>
+      <div class="me-how-card"><div class="me-how-num">4</div><h4>Descarga</h4><p>PNG o envia a WhatsApp</p></div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div><h2>Te gusto como se ve?</h2><p>Ordena tu camisa personalizada ahora.</p>
+      <a href="https://wa.me/50576292240?text=Hola%20Bravd%20Studios!" class="btn btn-primary" target="_blank">Ordenar</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo-text"><span class="f-brand">BRAVD</span><span class="f-sub">Studios</span></div>
+    <p>2026 Bravd Studios</p>
+  </footer>
+
+  <!-- MODAL WHATSAPP -->
+  <div class="me-modal-overlay" id="wa-modal" style="display:none;">
+    <div class="me-modal">
+      <div class="me-modal-header">
+        <h3>Detalles de tu pedido</h3>
+        <button class="me-btn-x" id="wa-modal-close">x</button>
+      </div>
+      <div class="me-modal-body">
+        <div class="me-field">
+          <label>Tallas y cantidades</label>
+          <div class="me-sizes-grid" id="sizes-grid">
+            <div class="me-size-item"><span>S</span><input type="number" class="sz-input" data-size="S" value="0" min="0" max="50"></div>
+            <div class="me-size-item"><span>M</span><input type="number" class="sz-input" data-size="M" value="0" min="0" max="50"></div>
+            <div class="me-size-item"><span>L</span><input type="number" class="sz-input" data-size="L" value="0" min="0" max="50"></div>
+            <div class="me-size-item"><span>XL</span><input type="number" class="sz-input" data-size="XL" value="0" min="0" max="50"></div>
+            <div class="me-size-item"><span>XXL</span><input type="number" class="sz-input" data-size="XXL" value="0" min="0" max="50"></div>
+          </div>
+          <div class="me-total-qty">Total: <strong id="wa-total-qty">0</strong> camisas</div>
+        </div>
+        <div class="me-pricing" id="wa-pricing">
+          <div class="me-price-row">
+            <span>Precio por camisa:</span>
+            <strong id="wa-price-unit">C$ 500</strong>
+          </div>
+          <div class="me-price-row">
+            <span>Total estimado:</span>
+            <strong id="wa-price-total">C$ 0</strong>
+          </div>
+          <div class="me-price-tier" id="wa-price-tier">Agrega al menos 1 camisa</div>
+        </div>
+        <div class="me-field">
+          <label for="wa-notas">Notas adicionales</label>
+          <textarea id="wa-notas" rows="3" placeholder="Color preferido, detalles especiales, ubicacion exacta..."></textarea>
+        </div>
+        <button class="me-action-btn me-wa-btn" id="wa-send">Enviar a WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="me-toast" id="toast"></div>
+  <script src="mockup-editor.js"></script>
+</body>
+</html>

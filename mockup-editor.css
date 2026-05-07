@@ -1,0 +1,144 @@
+/* ═══ MOCKUP EDITOR CSS ═══ */
+
+/* Navbar logo image */
+.logo-img{height:40px;width:auto;filter:brightness(0) invert(1);transition:all .3s ease}
+.logo-img:hover{opacity:.85}
+
+.me-section{display:grid;grid-template-columns:360px 1fr;gap:24px;max-width:1300px;margin:0 auto;padding:10px 40px 80px;align-items:start}
+.me-controls{display:flex;flex-direction:column;gap:14px;position:sticky;top:80px}
+.me-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden}
+.me-panel-header{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.04)}
+.me-panel-header h3{font-size:.9rem;font-weight:700}
+.me-panel-body{padding:14px 18px}
+.me-step-badge{width:24px;height:24px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0}
+.me-hint{font-size:.75rem;color:#555;margin-top:8px}
+
+/* Mockup selector */
+.me-mockup-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.me-mockup-thumb{background:rgba(255,255,255,.03);border:2px solid rgba(255,255,255,.08);border-radius:8px;padding:4px;cursor:pointer;transition:all .2s;text-align:center;font-family:inherit}
+.me-mockup-thumb img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:5px;display:block;margin-bottom:4px}
+.me-mockup-thumb span{font-size:.68rem;color:#888;font-weight:500}
+.me-mockup-thumb:hover{border-color:rgba(255,255,255,.25)}
+.me-mockup-thumb.active{border-color:#fff;background:rgba(255,255,255,.07)}
+.me-mockup-thumb.active span{color:#fff}
+
+/* Upload */
+.me-upload-design{display:block;cursor:pointer}
+.me-upload-inner{border:2px dashed rgba(255,255,255,.1);border-radius:10px;padding:22px 14px;text-align:center;transition:all .3s;color:#555}
+.me-upload-inner:hover{border-color:rgba(255,255,255,.3);color:#999;background:rgba(255,255,255,.02)}
+.me-upload-inner span{display:block;margin-top:6px;font-size:.85rem;font-weight:500}
+.me-upload-inner small{display:block;margin-top:3px;font-size:.7rem;color:#444}
+.me-design-loaded{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 14px}
+.me-design-loaded span{font-size:.82rem;color:#aaa;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.me-btn-x{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.me-btn-x:hover{background:#c33}
+
+/* Loading */
+.me-loading{display:flex;align-items:center;gap:10px;padding:18px;justify-content:center}
+.me-spinner{width:20px;height:20px;border:2px solid rgba(255,255,255,.1);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.me-loading span{font-size:.82rem;color:#aaa}
+
+/* Sliders */
+.me-slider-row{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.me-slider-row label{font-size:.78rem;color:#888;min-width:60px;font-weight:500}
+.me-slider{-webkit-appearance:none;flex:1;height:4px;background:rgba(255,255,255,.1);border-radius:4px;outline:none;cursor:pointer}
+.me-slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:#fff;border-radius:50%;cursor:grab;box-shadow:0 0 6px rgba(255,255,255,.3)}
+.me-slider::-moz-range-thumb{width:14px;height:14px;background:#fff;border-radius:50%;border:none;cursor:grab}
+.me-slider-row span{min-width:30px;text-align:right;color:#fff;font-weight:600;font-size:.75rem}
+
+/* Small buttons row */
+.me-btn-row{display:flex;gap:6px;margin-top:6px}
+.me-sm-btn{flex:1;padding:7px 0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:7px;color:#aaa;font-family:inherit;font-size:.78rem;font-weight:500;cursor:pointer;transition:all .2s}
+.me-sm-btn:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)}
+
+/* Action buttons */
+.me-action-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border:none;border-radius:12px;font-family:inherit;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .3s}
+.me-download-btn{background:#fff;color:#000;box-shadow:0 4px 20px rgba(255,255,255,.1)}
+.me-download-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(255,255,255,.2)}
+.me-wa-btn{background:#25D366;color:#fff}
+.me-wa-btn:hover{background:#20bd5a;transform:translateY(-2px);box-shadow:0 4px 20px rgba(37,211,102,.3)}
+
+/* PREVIEW */
+.me-preview{position:sticky;top:80px}
+.me-preview-frame{position:relative;background:#0d0d0d;border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.me-mockup-img{width:100%;display:block;border-radius:14px}
+.me-design-el{position:absolute;cursor:move;user-select:none;touch-action:none;border:2px dashed rgba(255,255,255,.35);border-radius:3px;transition:border-color .2s}
+.me-design-el:hover{border-color:rgba(255,255,255,.7)}
+.me-design-el.dragging{border-color:rgba(255,255,255,.8)}
+.me-design-el img{width:100%;height:100%;display:block;pointer-events:none}
+
+/* Toast */
+.me-toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(60px);background:#fff;color:#000;padding:11px 26px;border-radius:50px;font-family:'Outfit',sans-serif;font-weight:600;font-size:.85rem;z-index:999;opacity:0;transition:all .35s ease;pointer-events:none;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+.me-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* How grid */
+.me-how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:800px;margin:0 auto}
+.me-how-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:22px 14px;text-align:center;transition:all .3s}
+.me-how-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
+.me-how-num{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;margin:0 auto 10px}
+.me-how-card h4{font-size:.85rem;margin-bottom:3px}
+.me-how-card p{font-size:.72rem;color:#888}
+
+@media(max-width:900px){
+  .me-section{grid-template-columns:1fr}
+  .me-controls,.me-preview{position:static}
+  .me-how-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:500px){
+  .me-section{padding:10px 12px 60px}
+  .me-how-grid{grid-template-columns:1fr 1fr}
+  .me-mockup-grid{grid-template-columns:1fr 1fr;gap:4px}
+  .me-panel-body{padding:12px 14px}
+  .me-sm-btn{padding:10px 0;font-size:.82rem}
+  .me-slider{height:6px}
+  .me-slider::-webkit-slider-thumb{width:20px;height:20px}
+  .me-action-btn{padding:16px;font-size:.95rem}
+}
+
+/* Remove bg button */
+.me-btn-bg{padding:5px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:#aaa;font-family:inherit;font-size:.75rem;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.me-btn-bg:hover{background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.25)}
+
+/* Mobile hint on preview */
+.me-mobile-hint{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.65);color:rgba(255,255,255,.7);padding:6px 16px;border-radius:20px;font-size:.72rem;pointer-events:none;opacity:0;transition:opacity .4s;white-space:nowrap}
+.me-preview-frame:active .me-mobile-hint{opacity:1}
+
+/* Modal */
+.me-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
+.me-modal{background:#151515;border:1px solid rgba(255,255,255,.1);border-radius:16px;width:100%;max-width:420px;overflow:hidden;animation:modalIn .3s ease}
+@keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.me-modal-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid rgba(255,255,255,.06)}
+.me-modal-header h3{font-size:1rem;font-weight:700}
+.me-modal-body{padding:20px 22px}
+.me-field{margin-bottom:16px}
+.me-field label{display:block;font-size:.82rem;color:#aaa;margin-bottom:6px;font-weight:500}
+.me-field select,.me-field input,.me-field textarea{width:100%;padding:11px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#fff;font-family:inherit;font-size:.9rem;outline:none;transition:border-color .2s}
+.me-field select:focus,.me-field input:focus,.me-field textarea:focus{border-color:rgba(255,255,255,.3)}
+.me-field textarea{resize:vertical;min-height:60px}
+.me-field select option{background:#222;color:#fff}
+
+/* Resize handles */
+.me-handle{position:absolute;width:16px;height:16px;background:#fff;border:2px solid #000;border-radius:3px;z-index:5;opacity:.7;transition:opacity .2s}
+.me-handle:hover{opacity:1}
+.me-h-tl{top:-8px;left:-8px;cursor:nw-resize}
+.me-h-tr{top:-8px;right:-8px;cursor:ne-resize}
+.me-h-bl{bottom:-8px;left:-8px;cursor:sw-resize}
+.me-h-br{bottom:-8px;right:-8px;cursor:se-resize}
+
+/* Pricing in modal */
+.me-pricing{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;margin-bottom:16px}
+.me-price-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.me-price-row span{font-size:.85rem;color:#888}
+.me-price-row strong{font-size:1.1rem;color:#fff}
+.me-price-tier{font-size:.72rem;color:#666;text-align:center;margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,255,.06)}
+
+/* Sizes grid */
+.me-sizes-grid{display:flex;gap:6px}
+.me-size-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px 4px;transition:all .2s}
+.me-size-item:has(input:not([value="0"])){border-color:rgba(255,255,255,.25)}
+.me-size-item span{font-size:.78rem;font-weight:700;color:#aaa}
+.me-size-item input{width:100%;text-align:center;padding:6px 2px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:5px;color:#fff;font-family:inherit;font-size:.9rem;font-weight:600;outline:none}
+.me-size-item input:focus{border-color:rgba(255,255,255,.3)}
+.me-total-qty{text-align:center;margin-top:10px;font-size:.82rem;color:#888}
+.me-total-qty strong{color:#fff;font-size:.95rem}
